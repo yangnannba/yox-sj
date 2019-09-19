@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/swiper.min.css">
+	<link type="text/css" rel="stylesheet" href="css/styles.css" />
+
+	<title></title>
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />	
+
+	
+	<script type="text/javascript" src="js/reset.js"></script>
+
+
+<script src="js/jquery.min.js"></script>
+
+<script type="text/javascript" src="js/bootstrap.min.js"></script>	
+
+
+
+<script src="js/swiper.min.js"></script>
+</head>
+
+<body>
+ 
+
+
+<div class="fixed-nav">
+<nav class="navbar navbar-default mynav">
+  <div class="container-fluid">
+	<div class="logo"><img src="images/logo.png" alt="" /></div>
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li ><a href="index.html">网站首页</a></li>
+		<li  class="active"><a href="gzsj.html">改装升级</a></li>
+		<li><a href="tm.html">汽车贴膜</a></li>
+		<li><a href="case.html">施工案例</a></li>
+		<li ><a href="zbcx.html">质保查询</a></li>
+		<li ><a href="about.html">关于我们</a></li>
+		
+      </ul>
+
+    </div>
+  </div>
+</nav>	
+</div>	
+
+
+<div class="banner">
+	<img src="images/banner-gzsj.jpg" alt="" />
+</div>
+
+<div class="gzsj">
+
+
+  <div class="tabs">
+	<a href="#" class="active">宝马改装升级</a>
+	<a href="#">奔驰改装升级</a>
+	<a href="#">奥迪改装升级</a>
+	<a href="#">保时捷改装升级</a>
+  </div>
+  <div id="tabs-container" class="swiper-container">
+	<div class="swiper-wrapper">
+	  <div class="swiper-slide">
+		  <a href="baoma.html"><img src="images/gzsj-bm.jpg" alt="" /></a>
+	  </div>
+	  <div class="swiper-slide">
+		<a href="bc.html"><img src="images/gzsj-bc.jpg" alt="" /></a>
+	  </div>
+	  <div class="swiper-slide">
+		<a href="ad.html"><img src="images/gzsj-ad.jpg" alt="" /></a>
+	  </div>
+		<div class="swiper-slide">
+			<a href="bsj.html"><img src="images/gzsj-bsj.jpg" alt="" /></a>
+		</div>
+	</div>
+  </div>
+  <script type="text/javascript">
+	window.onload = function() {
+	
+		var tabsSwiper = new Swiper('#tabs-container', {
+			speed: 500,
+			on: {
+				slideChangeTransitionStart: function() {
+					$(".tabs .active").removeClass('active');
+					$(".tabs a").eq(this.activeIndex).addClass('active');
+				}
+			}
+		})
+		$(".tabs a").on('click', function(e) {
+			e.preventDefault()
+			$(".tabs .active").removeClass('active')
+			$(this).addClass('active')
+			tabsSwiper.slideTo($(this).index())
+		})
+	}
+	</script>
+</div>
+
+<div class="zyfw">
+		
+			<p>原厂改装升级就是在不破坏原厂电路，不影响原车质保的前提下，采用原厂配件或优质副厂配件，标配就次顶配车型，达到了顶配车型的功能。外观部分主要是包围和轮毂，电气产品包括方向盘、仪表、电吸门、电尾门、舒适进入、氛围灯、音响系统、秒表、罗盘等项目。亚欧行依靠独有原厂采购渠道，严格的质量控制体系，德国BBAP原厂的质量标准和完美的售后规范，越来越多的奔驰、宝马、奥迪、保时捷车主放弃改装店的风险，选择亚欧行专业服务。</p>
+			<ul>
+				<li><img src="images/zyfw-1.jpg" alt="" /></li>
+				<li><img src="images/zyfw-2.jpg" alt="" /></li>
+				<li><img src="images/zyfw-3.jpg" alt="" /></li>
+				<li><img src="images/zyfw-4.jpg" alt="" /></li>
+				<li><img src="images/zyfw-5.jpg" alt="" /></li>
+				<li><img src="images/zyfw-6.jpg" alt="" /></li>
+			</ul>
+		
+	</div>
+
+
+
+
+<div class="footer">
+	<ul class="footer-nav"> 
+		<li><a href="gzsj.html">改装升级</a></li>
+		<li><a href="tm.html">汽车贴膜</a></li>
+		<li><a href="#">服务保障</a></li>
+		<li><a href="about.html">联系我们</a></li>
+	</ul>
+	<div class="footer-add">
+		<div class="footer-l">
+			<h2 class="h2">亚欧行丨专注德系车改装</h2>
+			<p class="time">周一 至 周日 00:00~24:00</p>
+		</div>
+		<div class="zixun-wrap">
+			<div class="zixun">
+				<p class="us">电话咨询我们</p>
+				<p class="tel">152 0167 6918</p>
+			</div>
+		</div>
+	</div>
+	<p class="copy">Copyright © 2016-2019 Aeauto 版权所有 京ICP备 19035427 号</p>
+</div>
+
+</body>
+</html>

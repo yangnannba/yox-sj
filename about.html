@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+
+	<link rel="stylesheet" href="css/bootstrap.css">
+
+	<link type="text/css" rel="stylesheet" href="css/styles.css" />
+
+	<title></title>
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />	
+
+	
+	<script type="text/javascript" src="js/reset.js"></script>
+
+
+<script src="js/jquery.min.js"></script>
+
+<script type="text/javascript" src="js/bootstrap.min.js"></script>	
+<script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true"></script>	
+</head>
+
+<body>
+ 
+
+
+<div class="fixed-nav">
+<nav class="navbar navbar-default mynav">
+  <div class="container-fluid">
+	<div class="logo"><img src="images/logo.png" alt="" /></div>
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li ><a href="index.html">网站首页</a></li>
+		<li><a href="gzsj.html">改装升级</a></li>
+		<li><a href="tm.html">汽车贴膜</a></li>
+		<li><a href="case.html">施工案例</a></li>
+		<li><a href="zbcx.html">质保查询</a></li>
+		<li class="active"><a href="about.html">关于我们</a></li>
+		
+      </ul>
+
+    </div>
+  </div>
+</nav>	
+</div>	
+
+
+<div class="banner">
+	<img src="images/banner-about.jpg" alt="" />
+</div>
+
+
+<div class="about">
+
+	<h2 class="myh">关于我们</h2>
+
+
+	<div class="about-content">
+		<p>亚欧行（北京）汽车贸易有限公司简称“亚欧行”，亚欧行是一家多元化集体公司，核心团队11年汽车后市场服务从业经验，全国多店直营连锁。旗下拥有德系改装升级中心，豪华车定制销售中。</p>
+		<p>亚欧行德系改装升级中心是一家服务于德系（奔驰、宝马、奥迪、保时捷等）汽车改装升级的专业机构；业务包含原厂升级、外观改装、隐形车衣、改色贴膜、玻璃贴膜等专业服务。智能化全系配置，匠心打造完美座驾，让您尽享顶配豪华运动感，让驾驭不再枯燥。</p>
+	</div>
+</div>
+
+
+<div class="ppnh">
+	<h2 class="fuh2">品牌内涵</h2>
+	<ul>
+		<li class="ppll">
+			<dl>
+				<dt>品牌利益</dt>
+				<dd>为爱车保护而来<br />为客户利益而存</dd>
+			</dl>
+		</li>
+		<li class="ppzz">
+			<dl>
+				<dt>品牌宗旨</dt>
+				<dd>让您每天开新车</dd>
+			</dl>
+		</li>
+		<li class="cpnh">
+			<dl>
+				<dt>产品内涵</dt>
+				<dd>亚欧行只做原厂配件，只为安全出行</dd>
+			</dl>
+		</li>
+	</ul>
+</div>
+
+
+<div class="gsry-hzpp">
+
+			<h2 class="fuh2">公司荣誉</h2>
+			<ul class="gsry">
+				<li><img src="images/gsry-1.jpg" alt="" /></li>
+				<li><img src="images/gsry-2.jpg" alt="" /></li>
+				<li><img src="images/gsry-3.jpg" alt="" /></li>
+				<li><img src="images/gsry-4.jpg" alt="" /></li>
+			</ul>
+			<h2 class="fuh2">合作品牌</h2>	
+			<ul class="hzpp">
+				<li><img src="images/hzpp-1.jpg"  alt="" /></li>
+				<li><img src="images/hzpp-2.jpg"  alt="" /></li>
+				<li><img src="images/hzpp-3.jpg"  alt="" /></li>
+				<li><img src="images/hzpp-4.jpg"  alt="" /></li>
+				<li><img src="images/hzpp-5.jpg"  alt="" /></li>
+				<li><img src="images/hzpp-6.jpg"  alt="" /></li>
+				<li><img src="images/hzpp-7.jpg"  alt="" /></li>
+				<li><img src="images/hzpp-8.jpg"  alt="" /></li>
+
+			</ul>	
+
+
+</div>
+
+
+<div style="border:#ccc solid 1px;" id="dituContent"></div>
+<script type="text/javascript">
+	//创建和初始化地图函数：
+	function initMap(){
+		createMap();//创建地图
+		setMapEvent();//设置地图事件
+		addMapControl();//向地图添加控件
+		addMarker();//向地图中添加marker
+	}
+	
+	//创建地图函数：
+	function createMap(){
+		var map = new BMap.Map("dituContent");//在百度地图容器中创建一个地图
+		var point = new BMap.Point(116.589261,40.007533);//定义一个中心点坐标
+		map.centerAndZoom(point,17);//设定地图的中心点和坐标并将地图显示在地图容器中
+		window.map = map;//将map变量存储在全局
+	}
+	
+	//地图事件设置函数：
+	function setMapEvent(){
+		map.enableDragging();//启用地图拖拽事件，默认启用(可不写)
+		map.enableScrollWheelZoom();//启用地图滚轮放大缩小
+		map.enableDoubleClickZoom();//启用鼠标双击放大，默认启用(可不写)
+		map.enableKeyboard();//启用键盘上下左右键移动地图
+	}
+	
+	//地图控件添加函数：
+	function addMapControl(){
+		//向地图中添加缩放控件
+	var ctrl_nav = new BMap.NavigationControl({anchor:BMAP_ANCHOR_TOP_LEFT,type:BMAP_NAVIGATION_CONTROL_LARGE});
+	map.addControl(ctrl_nav);
+		//向地图中添加缩略图控件
+	var ctrl_ove = new BMap.OverviewMapControl({anchor:BMAP_ANCHOR_BOTTOM_RIGHT,isOpen:0});
+	map.addControl(ctrl_ove);
+		//向地图中添加比例尺控件
+	var ctrl_sca = new BMap.ScaleControl({anchor:BMAP_ANCHOR_BOTTOM_LEFT});
+	map.addControl(ctrl_sca);
+	}
+	
+	//标注点数组
+	var markerArr = [{title:"亚欧行（北京）汽车贸易有限公司",content:"联系电话：152&nbsp;0167&nbsp;6918",point:"116.589234|40.007533",isOpen:1,icon:{w:39,h:50,l:0,t:0,x:6,lb:5}}
+		 ];
+	//创建marker
+	function addMarker(){
+		for(var i=0;i<markerArr.length;i++){
+			var json = markerArr[i];
+			var p0 = json.point.split("|")[0];
+			var p1 = json.point.split("|")[1];
+			var point = new BMap.Point(p0,p1);
+			var iconImg = createIcon(json.icon);
+			var marker = new BMap.Marker(point,{icon:iconImg});
+			var iw = createInfoWindow(i);
+			var label = new BMap.Label(json.title,{"offset":new BMap.Size(json.icon.lb-json.icon.x+10,-20)});
+			marker.setLabel(label);
+			map.addOverlay(marker);
+			label.setStyle({
+						borderColor:"#808080",
+						color:"#333",
+						cursor:"pointer"
+			});
+			
+			(function(){
+				var index = i;
+				var _iw = createInfoWindow(i);
+				var _marker = marker;
+				_marker.addEventListener("click",function(){
+					this.openInfoWindow(_iw);
+				});
+				_iw.addEventListener("open",function(){
+					_marker.getLabel().hide();
+				})
+				_iw.addEventListener("close",function(){
+					_marker.getLabel().show();
+				})
+				label.addEventListener("click",function(){
+					_marker.openInfoWindow(_iw);
+				})
+				if(!!json.isOpen){
+					label.hide();
+					_marker.openInfoWindow(_iw);
+				}
+			})()
+		}
+	}
+	//创建InfoWindow
+	function createInfoWindow(i){
+		var json = markerArr[i];
+		var iw = new BMap.InfoWindow("<b class='iw_poi_title' title='" + json.title + "'>" + json.title + "</b><div class='iw_poi_content'>"+json.content+"</div>");
+		return iw;
+	}
+	//创建一个Icon
+	function createIcon(json){
+		var icon = new BMap.Icon("images/us_mk_icon.png", new BMap.Size(json.w,json.h),{imageOffset: new BMap.Size(-json.l,-json.t),infoWindowOffset:new BMap.Size(json.lb+5,1),offset:new BMap.Size(json.x,json.h)})
+		return icon;
+	}
+	
+	initMap();//创建和初始化地图
+</script>
+
+<div class="footer">
+	<ul class="footer-nav"> 
+		<li><a href="gzsj.html">改装升级</a></li>
+		<li><a href="tm.html">汽车贴膜</a></li>
+		<li><a href="#">服务保障</a></li>
+		<li><a href="about.html">联系我们</a></li>
+	</ul>
+	<div class="footer-add">
+		<div class="footer-l">
+			<h2 class="h2">亚欧行丨专注德系车改装</h2>
+			<p class="time">周一 至 周日 00:00~24:00</p>
+		</div>
+		<div class="zixun-wrap">
+			<div class="zixun">
+				<p class="us">电话咨询我们</p>
+				<p class="tel">152 0167 6918</p>
+			</div>
+		</div>
+	</div>
+	<p class="copy">Copyright © 2016-2019 Aeauto 版权所有 京ICP备 19035427 号</p>
+</div>
+
+</body>
+</html>
